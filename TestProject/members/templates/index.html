@@ -152,6 +152,10 @@
             height: 7vh;
             width: 12vw;
         }
+        /* form{
+            position: relative;
+            display: flex;
+        } */
     </style>
     <title>Instagram</title>
 </head>
@@ -165,10 +169,12 @@
 						src="./Images/Logo.png"
 						alt="Instagram Logo"
 					/> -->
-                <input type="text" name="username" class="username"
-                    placeholder="Phone number, username or email address" />
-                <input type="text" name="password" class="username" placeholder="Password" />
-                <input type="button" value="Log in" class="login" />
+                <form action="submit" class="signin">
+                    <input type="number" name="username" class="username"
+                        placeholder="Phone number, username or email address" />
+                    <input type="text" name="password" class="username" placeholder="Password" />
+                    <input type="submit" value="Create Account" class="login" />
+                </form>
                 <hr />
 
                 <div class="signup">
