@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<!-- <link rel="stylesheet" href="style.css"> -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		/>
+		<style>
+			body {
+				background-color: rgb(174, 239, 174);
+			}
+			a {
+				text-decoration: none;
+			}
+			* {
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			.loginpage {
+				margin-left: 35%;
+				margin-right: 30%;
+				margin-top: 10%;
+				border: 2px solid green;
+				border-radius: 10%;
+				padding-left: 5%;
+			}
+			#merchname {
+				font-size: x-large;
+				font-weight: bold;
+			}
+			#custname {
+				font-size: x-large;
+				font-weight: bold;
+			}
+			.name {
+				color: grey;
+			}
+			#email {
+				width: 300px;
+				height: 30px;
+			}
+			#pass {
+				width: 300px;
+				height: 30px;
+			}
+			#loginbutton {
+				width: 350px;
+				height: 40px;
+				font-size: larger;
+				color: white;
+				background-color: rgb(3, 88, 3);
+			}
+			#or {
+				margin-left: 30%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="loginpage">
+			<p id="signup">
+				Not Registered?<a href="" id="signuplink">Create Account</a>
+			</p>
+			<h1 id="headinglogin">Login To Your Account</h1>
+			<p class="name">Email</p>
+			<input type="email" placeholder="Enter Your Email" id="email" />
+			<p class="name">Password</p>
+			<input
+				type="password"
+				placeholder="Enter Your Password"
+				id="pass"
+			/>
+			<label for="check">
+				<input type="checkbox" onclick="myfunc()" id="check" /><span
+					>Show Password</span
+				>
+			</label>
+			<br />
+			<br />
+			<button id="loginbutton" onclick="dash()">Login</button>
+			<form action="dashboard" id="submit"></form>
+			<br />
+			<br />
+			<a href="" id="forgetpass">Forget Password</a>
+			<br />
+			<!-- <p id="or">OR</p>
+      <a href="" id="googlelog">
+        <i
+          class="fa-brands fa-google"
+          style="color: #2c6ddd; font-size: xx-large; padding: 2%"
+        ></i>
+      </a>
+      <a href="" id="facebooklog">
+        <i
+          class="fa-brands fa-facebook"
+          style="color: #005eff; font-size: xx-large; padding: 2%"
+        ></i>
+      </a>
+      <a href="" id="twitterlog">
+        <i
+          class="fa-brands fa-twitter"
+          style="color: #1467f5; font-size: xx-large; padding: 2%"
+        ></i>
+      </a>-->
+			<script>
+				function myfunc() {
+					var x = document.getElementById("pass");
+					if (x.type === "password") {
+						x.type = "text";
+					} else {
+						x.type = "password";
+					}
+				}
+				function dash() {
+					document.getElementById("submit").submit();
+				}
+			</script>
+		</div>
+	</body>
+</html>

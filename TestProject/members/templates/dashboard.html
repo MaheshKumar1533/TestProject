@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0%;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .maindash {
+        display: flex;
+      }
+      .firstbox {
+        background-color: #e4fbe7;
+        height: auto;
+        width: 290px;
+      }
+      .secondbox {
+        width: 1100px;
+        height: 100%;
+        background-color: #2a4031;
+      }
+      .thirdbox {
+        background-color: #e4fbe7;
+        height: auto;
+        width: 400px;
+      }
+      .logodiv {
+        display: flex;
+        justify-content: flex-start;
+        /* align-items: center; */
+        padding-left: 20%;
+      }
+      a {
+        text-decoration: none;
+      }
+      #searchitems {
+        width: 400px;
+        height: 40px;
+      }
+      .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #d1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 47px;
+        height: 42px;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        background-color: white;
+      }
+      #d2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 47px;
+        height: 42px;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        background-color: white;
+      }
+      .dropbtn {
+        background-color: #2a4031;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .livefeedimg {
+        margin-left: 15%;
+      }
+      #stocklefthd {
+        color: white;
+        font-size: x-large;
+        margin-left: 3%;
+      }
+      .countblock {
+        width: 240px;
+        height: 87px;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 2%;
+        border-radius: 7%;
+      }
+      .countbox {
+        display: flex;
+        justify-content: space-around;
+      }
+      #nmbr {
+        font-size: x-large;
+      }
+      #s1 {
+        color: #8a97a4;
+        font-size: x-large;
+        margin: 0%;
+      }
+      #notcrle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .prof {
+        background-color: white;
+        width: 243px;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .profimg {
+        background-image: url("./merchant\ img.jpg");
+        background-size: cover;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+      }
+      .b1 {
+        display: flex;
+        justify-content: space-around;
+      }
+      .accept {
+        width: 300px;
+        height: 80px;
+        background-color: white;
+        border-radius: 10%;
+        margin-left: 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .x {
+        width: 270px;
+        color: #04570d;
+        padding: 3%;
+        margin: 0%;
+        margin-left: 4%;
+        background-color: #8a97a4;
+        text-align: center;
+        border-radius: 5%;
+      }
+      .reject {
+        width: 300px;
+        height: 80px;
+        background-color: white;
+        border-radius: 10%;
+        margin-left: 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #help {
+        margin-left: 2%;
+      }
+      .stockdata {
+        display: flex;
+        justify-content: space-around;
+      }
+      .d1 {
+        width: 96px;
+        height: 140px;
+        background-color: white;
+      }
+      .d2 {
+        width: 96px;
+        height: 140px;
+        background-color: white;
+      }
+      .d3 {
+        width: 96px;
+        height: 140px;
+        background-color: white;
+      }
+      .d4 {
+        width: 96px;
+        height: 140px;
+        background-color: white;
+      }
+      .d5 {
+        width: 96px;
+        height: 140px;
+        background-color: white;
+      }
+      .stockinfo {
+        display: flex;
+        justify-content: space-around;
+      }
+      .info1 {
+        color: white;
+      }
+      .c1 {
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+        background-color: white;
+      }
+      .c2 {
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+        background-color: white;
+      }
+      .c3 {
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+        background-color: white;
+      }
+      .c4 {
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+        background-color: white;
+      }
+      .c5 {
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="maindash">
+      <div class="firstbox">
+        <div class="logodiv">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB0BwpcUPAu9WH5bOICKbpExWFUk4nExbc1g&usqp=CAU"
+            alt=""
+            height="100px"
+            width="100px"
+          />
+        </div>
+        <br />
+        <br />
+        <div class="logodiv">
+          <a href="" id="homelink"
+            ><i
+              class="fa-solid fa-house"
+              style="color: #1e3152; font-size: x-large"
+            ></i>
+            <b style="font-size: x-large">Home</b></a
+          >
+        </div>
+        <br />
+        <br />
+        <div class="logodiv">
+          <a href="" id="stocklink" style="text-decoration: none"
+            ><i
+              class="fa-solid fa-cubes-stacked"
+              style="font-size: x-large"
+            ></i>
+            <b style="font-size: x-large">Add Stock</b></a
+          >
+        </div>
+        <br />
+        <br />
+        <div class="logodiv">
+          <a href="" id="resourcelink"
+            ><i
+              class="fa-solid fa-cart-shopping"
+              style="font-size: x-large"
+            ></i>
+            <b style="font-size: x-large">Resources</b></a
+          >
+        </div>
+        <br />
+        <br />
+        <div class="logodiv">
+          <a href="" id="translink"
+            ><i
+              class="fa-solid fa-indian-rupee-sign"
+              style="font-size: x-large"
+            ></i>
+            <b style="font-size: x-large">Transactions</b></a
+          >
+        </div>
+        <br />
+        <br />
+        <div class="logodiv">
+          <a href="" id="commlink"
+            ><i class="fa-solid fa-user-group" style="font-size: x-large"></i>
+            <b style="font-size: x-large">Community</b></a
+          >
+        </div>
+        <br />
+        <br />
+        <div class="logodiv">
+          <a href="" id="helplink"
+            ><i class="fa-solid fa-users" style="font-size: x-large"></i>
+            <b style="font-size: x-large">Help</b></a
+          >
+        </div>
+        <br />
+        <br />
+        <div class="logodiv">
+          <a href="" id="locationlink"
+            ><i
+              class="fa-solid fa-location-dot"
+              style="color: #263b5f; font-size: x-large"
+            ></i>
+            <b style="font-size: x-large">Location mapping</b></a
+          >
+        </div>
+        <br />
+        <br />
+        <div class="logodiv">
+          <a href="" id="logoutlink" style="font-size: x-large"
+            ><b>Log Out</b></a
+          >
+        </div>
+      </div>
+      <div class="secondbox">
+        <div class="search">
+          <div id="d2"></div>
+          <input
+            type="text"
+            id="searchitems"
+            placeholder="Search your Pesticides"
+            style="border: none"
+          />
+          <a href="" id="searchbutton">
+            <div id="d1">
+              <i
+                class="fa-solid fa-magnifying-glass"
+                style="font-size: x-large"
+              ></i>
+            </div>
+          </a>
+
+          <div class="dropdown">
+            <button class="dropbtn">
+              <i
+                class="fa-solid fa-globe"
+                style="color: #f0f5ff; font-size: xx-large"
+              ></i>
+            </button>
+
+            <div class="dropdown-content">
+              <a href="#" id="lang1">Link 1</a>
+              <a href="#" id="lang2">Link 2</a>
+              <a href="#" id="lang3">Link 3</a>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="livefeedimg">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7MogblHqzH3USRsbtlA6Z6gDymDI-Yo0Irw&usqp=CAU"
+            alt=""
+            width="700px"
+            height="400px"
+          />
+        </div>
+        <span id="stocklefthd"><b>Stock Left</b></span>
+        <div class="dropdown">
+          <button class="dropbtn">
+            <span style="font-size: large; color: #00ff19">View all</span>
+          </button>
+
+          <div class="dropdown-content">
+            <a href="#" id="stock1">Link 1</a>
+            <a href="#" id="stock2">Link 2</a>
+            <a href="#" id="stock3">Link 3</a>
+          </div>
+        </div>
+        <div class="stockdata">
+          <div class="d1"></div>
+          <div class="d2"></div>
+          <div class="d3"></div>
+          <div class="d4"></div>
+          <div class="d5"></div>
+        </div>
+        <br />
+        <div class="stockinfo">
+          <a href="" id="item1" class="info1">item1</a>
+          <a href="" id="item2" class="info1">item2</a>
+          <a href="" id="item3" class="info1">item3</a>
+          <a href="" id="item4" class="info1">item4</a>
+          <a href="" id="item5" class="info1">item5</a>
+        </div>
+        <hr />
+        <span style="font-size: x-large; color: white; margin-left: 2%"
+          ><b>Messanger</b></span
+        >
+        <div class="dropdown">
+          <button class="dropbtn">
+            <span style="font-size: large; color: #00ff19">View all</span>
+          </button>
+
+          <div class="dropdown-content">
+            <a href="#" id="pers1">Link 1</a>
+            <a href="#" id="pers2">Link 2</a>
+            <a href="#" id="pers3">Link 3</a>
+          </div>
+        </div>
+        <div class="stockdata">
+          <div class="c1"></div>
+          <div class="c2"></div>
+          <div class="c3"></div>
+          <div class="c4"></div>
+          <div class="c5"></div>
+        </div>
+        <br />
+
+        <div class="stockinfo">
+          <a href="" id="per1" class="info1">person1</a>
+          <a href="" id="per2" class="info1">person2</a>
+          <a href="" id="per3" class="info1">person3</a>
+          <a href="" id="per4" class="info1">person4</a>
+          <a href="" id="per5" class="info1">person5</a>
+        </div>
+        <br />
+        <br />
+        <div class="countbox">
+          <div class="countblock">
+            <img src="./customer.jpg" alt="" width="70px" height="70px" />
+            <div class="count">
+              <b id="nmbr">1</b>
+              <p id="s1">stock left</p>
+            </div>
+          </div>
+          <div class="countblock">
+            <img src="./customer.jpg" alt="" width="70px" height="70px" />
+            <div class="count">
+              <b id="auth" style="font-size: x-large">1</b>
+              <p id="s1">stock left</p>
+            </div>
+          </div>
+          <div class="countblock">
+            <img src="./customer.jpg" alt="" width="70px" height="70px" />
+            <div class="count">
+              <b id="blks" style="font-size: x-large">1</b>
+              <p id="s1">stock left</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="thirdbox">
+        <div class="b1">
+          <div id="notcrle">
+            <i class="fa-solid fa-bell" style="color: #26c038"></i>
+          </div>
+          <div class="prof">
+            <div class="profimg"></div>
+            <span id="profname">Name</span>
+            <div class="dropdown">
+              <button
+                class="dropbtn"
+                style="background-color: white; height: 50px"
+              >
+                <span style="font-size: large; color: #00ff19"
+                  ><i class="fa-solid fa-bars" style="color: #349840"></i
+                ></span>
+              </button>
+
+              <div class="dropdown-content">
+                <a href="#" id="stock1">Link 1</a>
+                <a href="#" id="stock2">Link 2</a>
+                <a href="#" id="stock3">Link 3</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="accept">
+          <label for="acc">
+            <input type="radio" id="acc" name="status" />
+            <b style="font-size: x-large">Accept order</b>
+          </label>
+        </div>
+        <p class="x">Or</p>
+        <div class="reject">
+          <label for="rej">
+            <input type="radio" id="rej" name="status" />
+            <b style="font-size: x-large">reject</b>
+          </label>
+        </div>
+        <br />
+
+        <div class="modify">
+          <div class="dropdown">
+            <button class="dropbtn" style="background-color: #e4fbe7">
+              <span style="font-size: large; color: black">
+                <b style="font-size: x-large">Modify Order</b></span
+              >
+            </button>
+
+            <div class="dropdown-content" style="width: 303px; height: 216px">
+              <div class="accept">
+                <label for="modi1">
+                  <input type="radio" id="modi1" name="modi" />
+                  <b id="" style="font-size: x-large">Change Stock</b>
+                </label>
+              </div>
+              <p class="x">Or</p>
+              <div class="accept">
+                <label for="modi2">
+                  <input type="radio" id="modi2" name="modi" />
+                  <b id="stock2" style="font-size: x-large"
+                    >change delivery type</b
+                  >
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="" id="help">
+          <h2 style="margin-top: 70%; margin-left: 5%">Help</h2>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
