@@ -61,7 +61,7 @@
 	<body>
 		<div class="loginpage">
 			<p id="signup">
-				Not Registered?<a href="" id="signuplink">Create Account</a>
+				Not Registered?<a href="{% url 'signup' %}" id="signuplink">Create Account</a>
 			</p>
 			<h1 id="headinglogin">Login To Your Account</h1>
 			<p class="name">Email</p>
@@ -79,8 +79,7 @@
 			</label>
 			<br />
 			<br />
-			<button id="loginbutton" onclick="dash()">Login</button>
-			<form action="dashboard" id="submit"></form>
+			<a href="{ % url 'dashboard'%}"><button id="loginbutton">Login</button></a>
 			<br />
 			<br />
 			<a href="" id="forgetpass">Forget Password</a>
@@ -112,9 +111,6 @@
 					} else {
 						x.type = "password";
 					}
-				}
-				function dash() {
-					document.getElementById("submit").submit();
 				}
 			</script>
 		</div>
