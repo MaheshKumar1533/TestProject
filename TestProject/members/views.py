@@ -19,7 +19,7 @@ def login(request):
 
 def dashboard(request):
     template = loader.get_template('dashboard.html')
-    return HttpResponse(reverse(template.render()))
+    return HttpResponse(template.render())
 
 def submit(request):
     name = request.GET["username"]
