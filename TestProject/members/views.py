@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from members.models import userDetails
+from django.urls import reverse
+
 
 def members(request):
     template = loader.get_template('index.html')
@@ -17,7 +19,7 @@ def login(request):
 
 def dashboard(request):
     template = loader.get_template('dashboard.html')
-    return HttpResponse(template.render())
+    return HttpResponse(reverse(template.render()))
 
 def submit(request):
     name = request.GET["username"]
