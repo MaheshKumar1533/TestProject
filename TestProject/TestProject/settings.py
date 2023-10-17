@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l*7@-1^_x4metjm6zy^ne196knhl$zhul&)n1u)(1j#3&t@n(7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'members',
+    'otpauth',
 ]
+
+OTP_SECRET_KEY = "0705"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
