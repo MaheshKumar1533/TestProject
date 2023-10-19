@@ -15,7 +15,7 @@ def signup(request):
 
 def login(request):
     template = loader.get_template('login.html')
-    return HttpResponse(template.render())
+    return HttpResponse(template.render(context = {'error':True}))
 
 def dashboard(request):
     template = loader.get_template('dashboard.html')

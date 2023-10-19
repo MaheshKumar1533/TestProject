@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(96, 155, 114);
+}
+
+.title{
+    font-size: 70px;
+}
+
+.navbar{
+    background-color: yellow;
+    min-width: 97vw;
+    min-height: 10vh;
+    border-radius: 10px;
+    margin: 1% 1.5%;
+    position: fixed;
+    text-align: center;
+}
+
+.leftbar{
+    background-color: rgb(228, 251, 231);
+    min-width: 10vw;
+    max-width: auto;
+    min-height: 80vh;
+    border-radius: 10px;
+    margin: 1% 1.5%;
+    position: fixed;
+    top: 7.5rem;
+}
+
+.listitem{
+    list-style-type: none;
+    width: 80%;
+    background-color: orange;
+    margin: 20px 20px 20px 20px;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.unorderedlist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#accountIcon{
+    font-size: 100px;
+    margin: 10px;
+    background-color: rgb(228, 251, 231); 
+    color:  rgb(96, 155, 114);
+}
+
+.loginbutton{
+    list-style-type: none;
+    font-size: 30px;
+    background-color: rgb(96, 155, 114);
+    color: rgb(228, 251, 231);
+    padding: 5px;
+    border-radius: 10px;
+}

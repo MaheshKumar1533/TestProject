@@ -56,6 +56,11 @@
 			#or {
 				margin-left: 30%;
 			}
+			.error{
+				padding:100px;
+				background-color: rgb(246, 116, 121);
+				color: red;
+			}
 		</style>
 	</head>
 	<body>
@@ -64,6 +69,11 @@
 				Not Registered?<a href="{% url 'signup' %}" id="signuplink">Create Account</a>
 			</p>
 			<h1 id="headinglogin">Login To Your Account</h1>
+			{% if error %}
+			<div class="error">
+				Invalid User Name or Password
+			</div>
+			{% endif %}
 			<p class="name">Email</p>
 			<input type="email" placeholder="Enter Your Email" id="email" />
 			<p class="name">Password</p>
