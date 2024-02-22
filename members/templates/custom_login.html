@@ -1,74 +1,76 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Greenish Login</title>
   <link rel="stylesheet" href="style.css">
   <style>
-	body {
-  font-family: Arial, sans-serif;
-  background-image: url("leaf-pattern.png"); /* Replace with your leaf pattern image */
-  background-repeat: repeat;
-  /* background-opacity: 0.2; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("leaf-pattern.png");
+      /* Replace with your leaf pattern image */
+      background-repeat: repeat;
+      /* background-opacity: 0.2; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-.login-container {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-}
+    .login-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+    }
 
-.title {
-  text-align: center;
-  font-size: 24px;
-  color: #708F8F;
-}
+    .title {
+      text-align: center;
+      font-size: 24px;
+      color: #708F8F;
+    }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
-.username-field,
-.password-field {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-}
+    .username-field,
+    .password-field {
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
 
-.checkbox-container {
-  display: flex;
-  align-items: center;
-}
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+    }
 
-.forgot-password {
-  text-align: right;
-  color: #708F8F;
-  margin-top: 10px;
-}
+    .forgot-password {
+      text-align: right;
+      color: #708F8F;
+      margin-top: 10px;
+    }
 
-.login-button {
-  background-color: #708F8F;
-  color: #fff;
-  padding: 15px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
+    .login-button {
+      background-color: #708F8F;
+      color: #fff;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
 
-.login-button:hover {
-  background-color: #B3D1C5;
-}
+    .login-button:hover {
+      background-color: #B3D1C5;
+    }
 
-/*
+    /*
 .sign-up {
   text-align: center;
   color: #708F8F;
@@ -76,12 +78,12 @@
 }
 */
 
-/* 
+    /* 
 Remember to adapt these styles to your specific design preferences and framework. You can also add animations, error message styling, and other elements as needed.
 */
-
   </style>
 </head>
+
 <body>
   <div class="login-container">
     <h1 class="title">Welcome Back</h1>
@@ -96,7 +98,8 @@ Remember to adapt these styles to your specific design preferences and framework
       <a href="{% url 'signup' %}" class="forgot-password">Register</a>
       <a href="#" class="forgot-password">Forgot password?</a>
       <button type="submit" class="login-button">Login</button>
-      </form>
+    </form>
   </div>
 </body>
+
 </html>

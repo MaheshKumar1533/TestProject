@@ -7,7 +7,7 @@ urlpatterns = [
     path('signup/', views.signup, name="signup"),
     path('custom_login/', views.custom_login, name="custom_login"),
     path('dashboard/', views.dashboard, name="dashboard"),
-    path('submit/', views.submit, name='submit')
+    # path('submit/', views.submit, name='submit')
 ]
 
 urlpatterns += staticfiles_urlpatterns()

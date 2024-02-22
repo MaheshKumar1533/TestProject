@@ -5,20 +5,23 @@ from members.models import userDetails
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login,logout,authenticate
 from django.urls import reverse
+from django.contrib.auth.models import User
+
 
 
 def index(request):
     template = loader.get_template('index.html')
     return HttpResponse(template.render())
 
-def signup(request):
-    template = loader.get_template('signup.html')
-    return HttpResponse(template.render())
+# def signup(request):
+#     template = loader.get_template('signup.html')
+#     return HttpResponse(template.render())
 
 def custom_login(request):
     username = request.POST.get("username")
     password = request.POST.get("password")
     User = authenticate(request,username=username,password=password)
+    print(User)
     if User is not None:
         login(request,User)
         return render(request, 'dashboard.html')
@@ -32,7 +35,7 @@ def dashboard(request):
     template = loader.get_template('dashboard.html')
     return HttpResponse(template.render())
 
-def submit(request):
+def signup(request):
     if request.method == 'POST':
         name = request.POST.get("username")
         email = request.POST.get("email")

@@ -1,12 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
-
-class userDetails(models.Model):
-    customer_id = models.CharField(max_length=30,default="name")
-    #email = models.CharField(max_length=50)
-    number = models.IntegerField()
-    password = models.CharField(max_length=16,default="hars1234")
+class userDetails(AbstractUser):
+    username = models.CharField(max_length=30,default="Harsha123",primary_key=True)
+    last_login = models.DateTimeField(null=True, blank=True)
+    REQUIRED_FIELDS = ['email']
 
 class merchant_details(models.Model):
     merchant_id = models.IntegerField()
