@@ -1,118 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<!-- <link rel="stylesheet" href="style.css"> -->
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-		/>
-		<style>
-			body {
-				background-color: rgb(174, 239, 174);
-			}
-			a {
-				text-decoration: none;
-			}
-			* {
-				font-family: Arial, Helvetica, sans-serif;
-			}
-			.loginpage {
-				margin-left: 35%;
-				margin-right: 30%;
-				margin-top: 10%;
-				border: 2px solid green;
-				border-radius: 10%;
-				padding-left: 5%;
-			}
-			#merchname {
-				font-size: x-large;
-				font-weight: bold;
-			}
-			#custname {
-				font-size: x-large;
-				font-weight: bold;
-			}
-			.name {
-				color: grey;
-			}
-			#email {
-				width: 300px;
-				height: 30px;
-			}
-			#pass {
-				width: 300px;
-				height: 30px;
-			}
-			#loginbutton {
-				width: 350px;
-				height: 40px;
-				font-size: larger;
-				color: white;
-				background-color: rgb(3, 88, 3);
-			}
-			#or {
-				margin-left: 30%;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="loginpage">
-			<p id="signup">
-				Not Registered?<a href="{% url 'signup' %}" id="signuplink">Create Account</a>
-			</p>
-			<h1 id="headinglogin">Login To Your Account</h1>
-			<p class="name">Email</p>
-			<input type="email" placeholder="Enter Your Email" id="email" />
-			<p class="name">Password</p>
-			<input
-				type="password"
-				placeholder="Enter Your Password"
-				id="pass"
-			/>
-			<label for="check">
-				<input type="checkbox" onclick="myfunc()" id="check" /><span
-					>Show Password</span
-				>
-			</label>
-			<br />
-			<br />
-			<a href="{% url 'dashboard' %}"><button id="loginbutton">Login</button></a>
-			<br />
-			<br />
-			<a href="" id="forgetpass">Forget Password</a>
-			<br />
-			<!-- <p id="or">OR</p>
-      <a href="" id="googlelog">
-        <i
-          class="fa-brands fa-google"
-          style="color: #2c6ddd; font-size: xx-large; padding: 2%"
-        ></i>
-      </a>
-      <a href="" id="facebooklog">
-        <i
-          class="fa-brands fa-facebook"
-          style="color: #005eff; font-size: xx-large; padding: 2%"
-        ></i>
-      </a>
-      <a href="" id="twitterlog">
-        <i
-          class="fa-brands fa-twitter"
-          style="color: #1467f5; font-size: xx-large; padding: 2%"
-        ></i>
-      </a>-->
-			<script>
-				function myfunc() {
-					var x = document.getElementById("pass");
-					if (x.type === "password") {
-						x.type = "text";
-					} else {
-						x.type = "password";
-					}
-				}
-			</script>
-		</div>
-	</body>
+<html>
+<head>
+  <title>Greenish Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+	body {
+  font-family: Arial, sans-serif;
+  background-image: url("leaf-pattern.png"); /* Replace with your leaf pattern image */
+  background-repeat: repeat;
+  /* background-opacity: 0.2; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  color: #708F8F;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.username-field,
+.password-field {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.forgot-password {
+  text-align: right;
+  color: #708F8F;
+  margin-top: 10px;
+}
+
+.login-button {
+  background-color: #708F8F;
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.login-button:hover {
+  background-color: #B3D1C5;
+}
+
+/*
+.sign-up {
+  text-align: center;
+  color: #708F8F;
+  margin-top: 10px;
+}
+*/
+
+/* 
+Remember to adapt these styles to your specific design preferences and framework. You can also add animations, error message styling, and other elements as needed.
+*/
+
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1 class="title">Welcome Back</h1>
+    <form class="login-form">
+      <input type="text" id="username" name="username" placeholder="Username" class="username-field">
+      <input type="password" id="password" name="password" placeholder="Password" class="password-field">
+      <div class="checkbox-container">
+        <input type="checkbox" id="remember-me" name="remember-me">
+        <label for="remember-me">Remember me</label>
+      </div>
+      <a href="#" class="forgot-password">Forgot password?</a>
+      <button type="submit" class="login-button">Login</button>
+      </form>
+  </div>
+</body>
 </html>
