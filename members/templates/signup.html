@@ -67,8 +67,9 @@
 <body>
 	<div class="signup-container">
 		<h1 class="title">Sign Up</h1>
-		<form class="signup-form">
-			<input type="text" id="name" name="name" placeholder="Full Name" class="name-field">
+		<form class="signup-form" method="post">
+			{% csrf_token %}
+			<input type="text" id="name" name="username" placeholder="Full Name" class="name-field">
 			<input type="email" id="email" name="email" placeholder="Email Address" class="email-field">
 			<input type="password" id="password" name="password" placeholder="Password" class="password-field">
 			<input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password"

@@ -85,13 +85,15 @@ Remember to adapt these styles to your specific design preferences and framework
 <body>
   <div class="login-container">
     <h1 class="title">Welcome Back</h1>
-    <form class="login-form">
+    <form class="login-form" method="post">
+      {% csrf_token %}
       <input type="text" id="username" name="username" placeholder="Username" class="username-field">
       <input type="password" id="password" name="password" placeholder="Password" class="password-field">
       <div class="checkbox-container">
         <input type="checkbox" id="remember-me" name="remember-me">
         <label for="remember-me">Remember me</label>
       </div>
+      <a href="{% url 'signup' %}" class="forgot-password">Register</a>
       <a href="#" class="forgot-password">Forgot password?</a>
       <button type="submit" class="login-button">Login</button>
       </form>

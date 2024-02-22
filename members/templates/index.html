@@ -31,13 +31,13 @@
 	<body>
 		<h1 id="AccountType">Choose Account Type</h1>
 		<div class="types">
-			<a id="Merchant" href="{% url 'login' %}">
+			<a id="Merchant" href="{% url 'custom_login' %}">
 				{% load static %}
 				<img
 					src="{% static 'members/media/merchantimg.jpg'%}"
 					alt="home"
 			/></a>
-			<a id="Customer" href="{% url 'login' %}"
+			<a id="Customer" href="{% url 'custom_login' %}"
 				>{% load static %}
 				<img src="{% static 'members/media/customer.jpg'%}" alt="home"
 			/></a>
