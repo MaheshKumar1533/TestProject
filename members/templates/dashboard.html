@@ -1,557 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <style>
-      body {
-        margin: 0%;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .maindash {
-        display: flex;
-      }
-      .firstbox {
-        background-color: #e4fbe7;
-        height: auto;
-        width: 290px;
-      }
-      .secondbox {
-        width: 1100px;
-        height: 100%;
-        background-color: #2a4031;
-      }
-      .thirdbox {
-        background-color: #e4fbe7;
-        height: auto;
-        width: 400px;
-      }
-      .logodiv {
-        display: flex;
-        justify-content: flex-start;
-        /* align-items: center; */
-        padding-left: 20%;
-      }
-      a {
-        text-decoration: none;
-      }
-      #searchitems {
-        width: 400px;
-        height: 40px;
-      }
-      .search {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      #d1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 47px;
-        height: 42px;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
-        background-color: white;
-      }
-      #d2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 47px;
-        height: 42px;
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
-        background-color: white;
-      }
-      .dropbtn {
-        background-color: #2a4031;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-      }
 
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboard</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-      }
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
+		body {
+			background: #2A4031;
+		}
 
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-      .livefeedimg {
-        margin-left: 15%;
-      }
-      #stocklefthd {
-        color: white;
-        font-size: x-large;
-        margin-left: 3%;
-      }
-      .countblock {
-        width: 240px;
-        height: 87px;
-        background-color: white;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-left: 2%;
-        border-radius: 7%;
-      }
-      .countbox {
-        display: flex;
-        justify-content: space-around;
-      }
-      #nmbr {
-        font-size: x-large;
-      }
-      #s1 {
-        color: #8a97a4;
-        font-size: x-large;
-        margin: 0%;
-      }
-      #notcrle {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .prof {
-        background-color: white;
-        width: 243px;
-        height: 50px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-      }
-      .profimg {
-        background-image: url("./merchant\ img.jpg");
-        background-size: cover;
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-      }
-      .b1 {
-        display: flex;
-        justify-content: space-around;
-      }
-      .accept {
-        width: 300px;
-        height: 80px;
-        background-color: white;
-        border-radius: 10%;
-        margin-left: 3%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .x {
-        width: 270px;
-        color: #04570d;
-        padding: 3%;
-        margin: 0%;
-        margin-left: 4%;
-        background-color: #8a97a4;
-        text-align: center;
-        border-radius: 5%;
-      }
-      .reject {
-        width: 300px;
-        height: 80px;
-        background-color: white;
-        border-radius: 10%;
-        margin-left: 3%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      #help {
-        margin-left: 2%;
-      }
-      .stockdata {
-        display: flex;
-        justify-content: space-around;
-      }
-      .d1 {
-        width: 96px;
-        height: 140px;
-        background-color: white;
-      }
-      .d2 {
-        width: 96px;
-        height: 140px;
-        background-color: white;
-      }
-      .d3 {
-        width: 96px;
-        height: 140px;
-        background-color: white;
-      }
-      .d4 {
-        width: 96px;
-        height: 140px;
-        background-color: white;
-      }
-      .d5 {
-        width: 96px;
-        height: 140px;
-        background-color: white;
-      }
-      .stockinfo {
-        display: flex;
-        justify-content: space-around;
-      }
-      .info1 {
-        color: white;
-      }
-      .c1 {
-        width: 70px;
-        height: 70px;
-        border-radius: 50px;
-        background-color: white;
-      }
-      .c2 {
-        width: 70px;
-        height: 70px;
-        border-radius: 50px;
-        background-color: white;
-      }
-      .c3 {
-        width: 70px;
-        height: 70px;
-        border-radius: 50px;
-        background-color: white;
-      }
-      .c4 {
-        width: 70px;
-        height: 70px;
-        border-radius: 50px;
-        background-color: white;
-      }
-      .c5 {
-        width: 70px;
-        height: 70px;
-        border-radius: 50px;
-        background-color: white;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="maindash">
-      <div class="firstbox">
-        <div class="logodiv">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB0BwpcUPAu9WH5bOICKbpExWFUk4nExbc1g&usqp=CAU"
-            alt=""
-            height="100px"
-            width="100px"
-          />
-        </div>
-        <br />
-        <br />
-        <div class="logodiv">
-          <a href="" id="homelink"
-            ><i
-              class="fa-solid fa-house"
-              style="color: #1e3152; font-size: x-large"
-            ></i>
-            <b style="font-size: x-large">Home</b></a
-          >
-        </div>
-        <br />
-        <br />
-        <div class="logodiv">
-          <a href="" id="stocklink" style="text-decoration: none"
-            ><i
-              class="fa-solid fa-cubes-stacked"
-              style="font-size: x-large"
-            ></i>
-            <b style="font-size: x-large">Add Stock</b></a
-          >
-        </div>
-        <br />
-        <br />
-        <div class="logodiv">
-          <a href="" id="resourcelink"
-            ><i
-              class="fa-solid fa-cart-shopping"
-              style="font-size: x-large"
-            ></i>
-            <b style="font-size: x-large">Resources</b></a
-          >
-        </div>
-        <br />
-        <br />
-        <div class="logodiv">
-          <a href="" id="translink"
-            ><i
-              class="fa-solid fa-indian-rupee-sign"
-              style="font-size: x-large"
-            ></i>
-            <b style="font-size: x-large">Transactions</b></a
-          >
-        </div>
-        <br />
-        <br />
-        <div class="logodiv">
-          <a href="" id="commlink"
-            ><i class="fa-solid fa-user-group" style="font-size: x-large"></i>
-            <b style="font-size: x-large">Community</b></a
-          >
-        </div>
-        <br />
-        <br />
-        <div class="logodiv">
-          <a href="" id="helplink"
-            ><i class="fa-solid fa-users" style="font-size: x-large"></i>
-            <b style="font-size: x-large">Help</b></a
-          >
-        </div>
-        <br />
-        <br />
-        <div class="logodiv">
-          <a href="" id="locationlink"
-            ><i
-              class="fa-solid fa-location-dot"
-              style="color: #263b5f; font-size: x-large"
-            ></i>
-            <b style="font-size: x-large">Location mapping</b></a
-          >
-        </div>
-        <br />
-        <br />
-        <div class="logodiv">
-          <a href="" id="logoutlink" style="font-size: x-large"
-            ><b>Log Out</b></a
-          >
-        </div>
-      </div>
-      <div class="secondbox">
-        <div class="search">
-          <div id="d2"></div>
-          <input
-            type="text"
-            id="searchitems"
-            placeholder="Search your Pesticides"
-            style="border: none"
-          />
-          <a href="" id="searchbutton">
-            <div id="d1">
-              <i
-                class="fa-solid fa-magnifying-glass"
-                style="font-size: x-large"
-              ></i>
-            </div>
-          </a>
+		header {
+			max-width: 100vw;
+			height: 10vh;
+			background-color: #28293E;
+			color: white;
+		}
 
-          <div class="dropdown">
-            <button class="dropbtn">
-              <i
-                class="fa-solid fa-globe"
-                style="color: #f0f5ff; font-size: xx-large"
-              ></i>
-            </button>
+		nav {
+			height: 100%;
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			align-items: center;
+		}
 
-            <div class="dropdown-content">
-              <a href="#" id="lang1">Link 1</a>
-              <a href="#" id="lang2">Link 2</a>
-              <a href="#" id="lang3">Link 3</a>
-            </div>
-          </div>
-        </div>
-        <br />
-        <div class="livefeedimg">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7MogblHqzH3USRsbtlA6Z6gDymDI-Yo0Irw&usqp=CAU"
-            alt=""
-            width="700px"
-            height="400px"
-          />
-        </div>
-        <span id="stocklefthd"><b>Stock Left</b></span>
-        <div class="dropdown">
-          <button class="dropbtn">
-            <span style="font-size: large; color: #00ff19">View all</span>
-          </button>
+		.userdetails {
+			display: flex;
+			font-family: "Nunito";
+			width: 20%;
+			justify-content: space-evenly;
+		}
 
-          <div class="dropdown-content">
-            <a href="#" id="stock1">Link 1</a>
-            <a href="#" id="stock2">Link 2</a>
-            <a href="#" id="stock3">Link 3</a>
-          </div>
-        </div>
-        <div class="stockdata">
-          <div class="d1"></div>
-          <div class="d2"></div>
-          <div class="d3"></div>
-          <div class="d4"></div>
-          <div class="d5"></div>
-        </div>
-        <br />
-        <div class="stockinfo">
-          <a href="" id="item1" class="info1">item1</a>
-          <a href="" id="item2" class="info1">item2</a>
-          <a href="" id="item3" class="info1">item3</a>
-          <a href="" id="item4" class="info1">item4</a>
-          <a href="" id="item5" class="info1">item5</a>
-        </div>
-        <hr />
-        <span style="font-size: x-large; color: white; margin-left: 2%"
-          ><b>Messanger</b></span
-        >
-        <div class="dropdown">
-          <button class="dropbtn">
-            <span style="font-size: large; color: #00ff19">View all</span>
-          </button>
+		.lan {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 
-          <div class="dropdown-content">
-            <a href="#" id="pers1">Link 1</a>
-            <a href="#" id="pers2">Link 2</a>
-            <a href="#" id="pers3">Link 3</a>
-          </div>
-        </div>
-        <div class="stockdata">
-          <div class="c1"></div>
-          <div class="c2"></div>
-          <div class="c3"></div>
-          <div class="c4"></div>
-          <div class="c5"></div>
-        </div>
-        <br />
+		.location {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 5px;
+			background: #D3F8D8;
+			border-radius: 50%;
+		}
 
-        <div class="stockinfo">
-          <a href="" id="per1" class="info1">person1</a>
-          <a href="" id="per2" class="info1">person2</a>
-          <a href="" id="per3" class="info1">person3</a>
-          <a href="" id="per4" class="info1">person4</a>
-          <a href="" id="per5" class="info1">person5</a>
-        </div>
-        <br />
-        <br />
-        <div class="countbox">
-          <div class="countblock">
-            <img src="./customer.jpg" alt="" width="70px" height="70px" />
-            <div class="count">
-              <b id="nmbr">1</b>
-              <p id="s1">stock left</p>
-            </div>
-          </div>
-          <div class="countblock">
-            <img src="./customer.jpg" alt="" width="70px" height="70px" />
-            <div class="count">
-              <b id="auth" style="font-size: x-large">1</b>
-              <p id="s1">stock left</p>
-            </div>
-          </div>
-          <div class="countblock">
-            <img src="./customer.jpg" alt="" width="70px" height="70px" />
-            <div class="count">
-              <b id="blks" style="font-size: x-large">1</b>
-              <p id="s1">stock left</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="thirdbox">
-        <div class="b1">
-          <div id="notcrle">
-            <i class="fa-solid fa-bell" style="color: #26c038"></i>
-          </div>
-          <div class="prof">
-            <div class="profimg"></div>
-            <span id="profname">Name</span>
-            <div class="dropdown">
-              <button
-                class="dropbtn"
-                style="background-color: white; height: 50px"
-              >
-                <span style="font-size: large; color: #00ff19"
-                  ><i class="fa-solid fa-bars" style="color: #349840"></i
-                ></span>
-              </button>
+		.flag {
+			height: 4vh;
+		}
 
-              <div class="dropdown-content">
-                <a href="#" id="stock1">Link 1</a>
-                <a href="#" id="stock2">Link 2</a>
-                <a href="#" id="stock3">Link 3</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br />
-        <br />
-        <br />
-        <div class="accept">
-          <label for="acc">
-            <input type="radio" id="acc" name="status" />
-            <b style="font-size: x-large">Accept order</b>
-          </label>
-        </div>
-        <p class="x">Or</p>
-        <div class="reject">
-          <label for="rej">
-            <input type="radio" id="rej" name="status" />
-            <b style="font-size: x-large">reject</b>
-          </label>
-        </div>
-        <br />
+		.user {
+			display: flex;
+			background-color: white;
+			color: black;
+			padding: 5px;
+			border-radius: 50px;
+			align-items: center;
+			justify-content: center;
+		}
 
-        <div class="modify">
-          <div class="dropdown">
-            <button class="dropbtn" style="background-color: #e4fbe7">
-              <span style="font-size: large; color: black">
-                <b style="font-size: x-large">Modify Order</b></span
-              >
-            </button>
+		.profile {
+			height: 4vh;
+		}
 
-            <div class="dropdown-content" style="width: 303px; height: 216px">
-              <div class="accept">
-                <label for="modi1">
-                  <input type="radio" id="modi1" name="modi" />
-                  <b id="" style="font-size: x-large">Change Stock</b>
-                </label>
-              </div>
-              <p class="x">Or</p>
-              <div class="accept">
-                <label for="modi2">
-                  <input type="radio" id="modi2" name="modi" />
-                  <b id="stock2" style="font-size: x-large"
-                    >change delivery type</b
-                  >
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="" id="help">
-          <h2 style="margin-top: 70%; margin-left: 5%">Help</h2>
-        </a>
-      </div>
-    </div>
-  </body>
+		.down {
+			margin-left: 5px;
+		}
+
+		.navsections {
+			display: flex;
+			width: 50%;
+			align-items: center;
+			text-align: center;
+		}
+
+		.item {
+			list-style: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			vertical-align: center;
+			min-width: 10vw;
+			font-family: "Epilogue";
+		}
+
+		main {
+			display: grid;
+			grid-template-columns: 17% 60% 23%;
+		}
+
+		.leftbar {
+			background: #E4FBE7;
+			padding: 20px 15px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			border-radius: 0 60px 60px 0;
+		}
+
+		.home {
+			display: flex;
+			background: #EB763C;
+			border-radius: 50px;
+			align-items: center;
+			padding: 2px;
+			margin: 50px 0px;
+		}
+
+		.iconbackground {
+			background-color: white;
+			border-radius: 50%;
+			padding: 2px;
+		}
+
+		.accounticon {
+			height: 4vh;
+		}
+
+		.accountdetailshome {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			justify-content: center;
+			color: white;
+		}
+
+		.account {
+			display: grid;
+			grid-template-columns: 30% 60%;
+			gap: 10%;
+			color: #134A69;
+			font-family: "Nunito";
+		}
+
+		.accounthead {
+			font-size: 1.3rem;
+			margin: 10px 0;
+		}
+
+		.accountitem {
+			margin: 15px;
+		}
+
+		.feedback {
+			width: 100%;
+			display: flex;
+			justify-content: end;
+			margin-right: 1.3vw;
+		}
+
+		.middlebar {
+			display: flex;
+			flex-direction: column;
+			padding: 5vh 5vw;
+		}
+
+		.search {
+			display: flex;
+			justify-content: end;
+			padding: 10px;
+			margin: 15px;
+		}
+
+		#searchbox {
+			width: 50%;
+			font-size: 1.5rem;
+			border-radius: 50px;
+			border: none;
+			color: #434C5E;
+			padding: 7px 25px;
+		}
+
+		.items {
+			display: grid;
+			grid-template-columns: 30% 30% 30%;
+			gap: 5%;
+		}
+
+		.stock-item {
+			background-color: white;
+			border-radius: 15px;
+			height: 30vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.stock-img {
+			width: 90%;
+			margin: 10px;
+		}
+		.stock-name{
+			font-weight: bold;
+		}
+		.stock-price{
+			color: #FF5B19;
+
+		}
+		.capcicum{
+			width: auto;
+			height: 35%;
+		}
+		.details{
+			font-family: "Quicksand";
+			width: 100%;
+			padding: 15px;
+		}
+
+		.stats {
+			display: flex;
+		}
+
+		.rightbar {
+			background-color: white;
+			border-radius: 10px;
+			margin: 50px 15px;
+			display: grid;
+			grid-template-rows: 50% 50%;
+			padding: 20px;
+		}
+		.title{
+			color: #181818;
+			font-family: 'Quicksand';
+			font-weight: bold;
+		}
+		.comments{
+			height: 100%;
+			padding: 5% 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+		}
+		.comment{
+			list-style: none;
+			display: flex;	
+			gap: 5%;
+		}
+		.profileimg{
+			width: 3vw;
+		}
+		.username{
+			font-family: "Quicksand";
+			font-size: 1.02em;
+			font-weight: bold;
+			color: #181818;
+		}
+		.map-container{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			/* margin: 20px; */
+		}
+		.map{
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="userdetails">
+				<div class="lan">
+					<div class="language">EN</div>
+				</div>
+				<div class="location">
+					<img src="./group-70.png" alt="" class="flag">
+				</div>
+				<div class="user">
+					<img src="./ellipse-5.png" alt="" class="profile">
+					<div class="username">Thanh Pham</div>
+					<img src="./chevron-down-1.svg" alt="" class="down">
+				</div>
+			</div>
+			<ul class="navsections">
+				<li class="item">
+					<div>Live Feed</div>
+				</li>
+				<li class="item">
+					<div>Filters</div>
+				</li>
+				<li class="item">
+					<div>Pricing</div>
+				</li>
+				<li class="item">
+					<div>Bulk Order</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<div class="leftbar">
+			<div class="options">
+				<img src="./combined-shape.svg" alt="" class="optionicon">
+			</div>
+			<div class="home">
+				<div class="iconbackground">
+					<img src="./iconly-bold-home.svg" alt="" class="accounticon">
+				</div>
+				<div class="accountdetailshome">
+					<div class="accounthead">Home</div>
+				</div>
+			</div>
+			<div class="account">
+				<img src="./category.svg" alt="" class="accounticon">
+				<div class="accountdetails">
+					<div class="accounthead">Account</div>
+					<ul class="accountoptions">
+						<li class="accountitem">Name</li>
+						<li class="accountitem">Phone Number</li>
+						<li class="accountitem">Address</li>
+						<li class="accountitem">Password</li>
+					</ul>
+				</div>
+			</div>
+			<div class="account">
+				<img src="./image-23.png" alt="" class="accounticon">
+				<div class="accountdetails">
+					<div class="accounthead">Orders</div>
+					<ul class="accountoptions">
+						<li class="accountitem">Status</li>
+						<li class="accountitem">Merchant Number</li>
+						<li class="accountitem">Order History</li>
+						<li class="accountitem">Connectivity</li>
+					</ul>
+				</div>
+			</div>
+			<div class="account">
+				<img src="./image-27.png" alt="" class="accounticon">
+				<div class="accountdetails">
+					<div class="accounthead">Help</div>
+				</div>
+			</div>
+			<div class="account feedback">
+				<div class="accountdetails feedback">
+					<div class="accounthead	feedback">Feedback</div>
+				</div>
+			</div>
+		</div>
+		<div class="middlebar">
+			<div class="search">
+				<input type="search" name="" id="searchbox" placeholder="Search your Stock...">
+			</div>
+			<div class="items">
+				<div class="stock-item">
+					<img src="./image-19.png" alt="" class="stock-img">
+					<div class="details">
+						<div class="stock-name">Tomatos</div>
+						<div class="stock-price">9540</div>
+						<div class="stock-location">Madanapalle</div>
+					</div>
+				</div>
+				<div class="stock-item">
+					<img src="./image-18.png" alt="" class="stock-img">
+					<div class="details">
+						<div class="stock-name">Carrots</div>
+						<div class="stock-price">90</div>
+						<div class="stock-location">Angallu</div>
+					</div>
+				</div>
+				<div class="stock-item">
+					<img src="./image-20.png" alt="" class="stock-img">
+					<div class="details">
+						<div class="stock-name">Cauliflower</div>
+						<div class="stock-price">50</div>
+						<div class="stock-location">B Kothakota</div>
+					</div>
+				</div>
+				<div class="stock-item">
+					<img src="./image-21.png" alt="" class="stock-img capcicum">
+					<div class="details">
+						<div class="stock-name">Capsicum</div>
+						<div class="stock-price">70</div>
+						<div class="stock-location">Badvel</div>
+					</div>
+				</div>
+				<div class="stock-item">
+					<img src="./image-22.png" alt="" class="stock-img">
+					<div class="details">
+						<div class="stock-name">Brinjal</div>
+						<div class="stock-price">60</div>
+						<div class="stock-location">Kadapa</div>
+					</div>
+				</div>
+				<div class="stock-item">
+					<img src="" alt="" class="stock-img">
+					<div class="details">
+						<div class="stock-name">White Cottage</div>
+						<div class="stock-price">30</div>
+						<div class="stock-location">Hyderabad</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="stats">
+				<div class="newstocks">
+					<img src="./book-3.svg" alt="" class="icon">
+					<div class="updates">
+						<div class="num">20</div>
+						<div class="value">New Stocks</div>
+					</div>
+				</div>
+				<div class="authors">
+					<img src="" alt="" class="icon">
+					<div class="updates">
+						<div class="num">20</div>
+						<div class="value">Authors</div>
+					</div>
+				</div>
+				<div class="blocks">
+					<img src="" alt="" class="icon">
+					<div class="updates">
+						<div class="num">3</div>
+						<div class="value">Blocks</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+		<div class="rightbar">
+			<div class="recentmessages">
+				<div class="title">Recent Messages</div>
+				<ul class="comments">
+					<li class="comment">
+						<img src="./cheerful-indian-businessman-smiling-closeup-portrait-jobs-career.png" alt="" class="profileimg">
+						<div class="message">
+							<div class="username">James Benny</div>
+							<div class="msg">Hey, Let me know if you’re still available...</div>
+						</div>
+					</li>
+					<li class="comment">
+						<img src="./janko-ferlic-g-jo31esure-unsplash-2.png" alt="" class="profileimg">
+						<div class="message">
+							<div class="username">William Chynita</div>
+							<div class="msg">Okay thanks</div>
+						</div>
+					</li>
+					<li class="comment">
+						<img src="./studio-portrait-emotional-happy-funny-smiling-boyfriend-man-with.png" alt="" class="profileimg">
+						<div class="message">
+							<div class="username">Henry David</div>
+							<div class="msg">Alright I’ll get back to you ASAP</div>
+						</div>
+					</li>
+					<li class="comment">
+						<img src="./young-bearded-man-with-striped-shirt-1.png" alt="" class="profileimg">
+						<div class="message">
+							<div class="username">Charlotte Flair</div>
+							<div class="msg">Sounds good buddy</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="mapview">
+				<div class="title">Map View</div>
+				<div class="map-container">
+					<img src="./map.png" alt="" class="map">
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
 </html>
